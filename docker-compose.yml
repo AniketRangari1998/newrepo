@@ -1,0 +1,29 @@
+version : "3"
+
+services:
+  mysqldb_milestone4:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: idea
+    ports:
+      - "3307:3306"
+    
+  
+  springboot-docker-container-milestone4:
+    image: spring-boot-app-milestone4
+    restart: always
+    ports:
+      - "8090:8091"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysqldb1:3306/idea"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+    
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    depends_on:
+      - mysqldb1
