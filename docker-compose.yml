@@ -18,7 +18,7 @@ services:
     ports:
       - "8090:8091"
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://mysqldb1:3306/idea"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysqldb_milestone4:3306/idea"
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
     
@@ -26,4 +26,4 @@ services:
       context: "./"
       dockerfile: "Dockerfile"
     depends_on:
-      - mysqldb1
+      - mysqldb_milestone4
