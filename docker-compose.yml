@@ -9,14 +9,14 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_DATABASE: idea
     ports:
-      - "3307:3306"
+      - "3303:3306"
     
   
   springboot-docker-container-milestone4:
     image: spring-boot-app-milestone4
     restart: always
     ports:
-      - "8090:8091"
+      - "8093:8091"
     environment:
       SPRING_DATASOURCE_URL: "jdbc:mysql://mysqldb_milestone4:3306/idea"
       SPRING_DATASOURCE_USERNAME: "root"
